@@ -194,6 +194,7 @@ namespace NMR {
 
 			if (bIsValid) {
 				MESHFACE * pFace = pMesh->addFace(pNodes[0], pNodes[1], pNodes[2]);
+				(void)(pFace);
 				//if (pProperties) {
 				//	nfUint32 nRed = (nfUint32) ((nfFloat) (Facet.m_attribute & 0x1f) / (255.0f / 31.0f));
 				//	nfUint32 nGreen = (nfUint32)((nfFloat)((Facet.m_attribute >> 5) & 0x1f) / (255.0f / 31.0f));

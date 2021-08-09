@@ -313,7 +313,7 @@ sLib3MFBall CBeamLattice::GetBall (const Lib3MF_uint32 nIndex)
 		for (Lib3MF_uint32 iBall = 0; iBall < meshBallCount; iBall++) {
 			NMR::MESHBALL * meshBall = m_mesh.getBall(iBall);
 
-			if (meshBall->m_nodeindex == ballNodeIndex) {
+			if (meshBall->m_nodeindex == (NMR::nfInt32)ballNodeIndex) {
 				ball.m_Index = meshBall->m_nodeindex;
 
 				ball.m_Radius = meshBall->m_radius;
@@ -382,7 +382,7 @@ void CBeamLattice::SetBall (const Lib3MF_uint32 nIndex, const sLib3MFBall BallIn
 		for (Lib3MF_uint32 iBall = 0; iBall < meshBallCount; iBall++) {
 			NMR::MESHBALL * meshBall = m_mesh.getBall(iBall);
 
-			if (meshBall->m_nodeindex == ballNodeIndex) {
+			if (meshBall->m_nodeindex == (NMR::nfInt32)ballNodeIndex) {
 				meshBall->m_nodeindex = BallInfo.m_Index;
 				meshBall->m_radius = BallInfo.m_Radius;
 				return;

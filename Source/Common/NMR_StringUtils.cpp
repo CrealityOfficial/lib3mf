@@ -562,14 +562,14 @@ namespace NMR {
 	{
 
 		// Check Input Sanity
-		size_t nLength = sString.length();
-		if (nLength == 0)
+		size_t nLength1 = sString.length();
+		if (nLength1 == 0)
 			return L"";
-		if (nLength > NMR_MAXSTRINGBUFFERSIZE)
+		if (nLength1 > NMR_MAXSTRINGBUFFERSIZE)
 			throw CNMRException(NMR_ERROR_INVALIDBUFFERSIZE);
 
 		// Reserve UTF8 Buffer
-		nfUint32 nBufferSize = (nfUint32)nLength;
+		nfUint32 nBufferSize = (nfUint32)nLength1;
 		std::vector<nfWChar> Buffer;
 		Buffer.resize(nBufferSize * 2 + 2);
 
