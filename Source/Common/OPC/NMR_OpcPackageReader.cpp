@@ -100,6 +100,7 @@ namespace NMR {
 			default:
 				throw CNMRException(NMR_ERROR_ZIPCALLBACK);
 		}
+		return -1;
 	}
 
 	COpcPackageReader::COpcPackageReader(_In_ PImportStream pImportStream, _In_ PModelWarnings pWarnings, _In_ PProgressMonitor pProgressMonitor)
