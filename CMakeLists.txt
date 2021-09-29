@@ -140,10 +140,10 @@ target_include_directories(${LIB3MF_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/In
 target_include_directories(${LIB3MF_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/Include)
 
 if (USE_INCLUDED_LIBZIP)
-    target_link_libraries(${LIB3MF_NAME} zip)
+    target_link_libraries(${LIB3MF_NAME} PRIVATE zip)
 endif()
 if (USE_INCLUDED_ZLIB)
-    target_link_libraries(${LIB3MF_NAME} zlib)
+    target_link_libraries(${LIB3MF_NAME} PRIVATE zlib)
 endif()
 
 # This makes sure symbols are exported
