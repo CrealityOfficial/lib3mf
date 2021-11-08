@@ -172,3 +172,7 @@ if (UNIX OR MINGW)
     set_target_properties(${LIB3MF_NAME} PROPERTIES LINK_FLAGS -s)
   endif()
 endif()
+
+if(CC_INSTALL_3MF)
+	__install_directory_specif(${CMAKE_CURRENT_SOURCE_DIR}/Bindings/Cpp/ 3mf)
+endif()
