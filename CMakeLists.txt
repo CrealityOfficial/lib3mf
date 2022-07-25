@@ -129,9 +129,11 @@ endif()
 
 set(LIBS)
 if (USE_INCLUDED_LIBZIP)
+	__cc_find(zip)
     list(APPEND LIBS zip)
 endif()
 if (USE_INCLUDED_ZLIB)
+	__cc_find(zlib)
     list(APPEND LIBS zlib)
 endif()
 
