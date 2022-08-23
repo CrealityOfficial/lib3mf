@@ -6,7 +6,7 @@ set(LIB3MF_VERSION_MINOR 1)        # increase on every backward compatible chang
 set(LIB3MF_VERSION_MICRO 1)        # increase on on every change that does not alter the API
 set(LIB3MF_VERSION_PRERELEASE "")  # denotes pre-release information of a version of lib3mf
 
-set(LIB3MF_NAME "lib3MF")
+set(LIB3MF_NAME "lib3mf")
 option(USE_INCLUDED_ZLIB "Use included zlib" ON)
 option(USE_INCLUDED_LIBZIP "Use included libzip" ON)
 
