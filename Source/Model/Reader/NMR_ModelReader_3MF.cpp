@@ -106,10 +106,10 @@ namespace NMR {
 					pXMLNode->setIgnoreMetaData(true);
 					pXMLNode->parseXML(pXMLReader.get());
 
-					if (!pXMLNode->getHasResources())
-						throw CNMRException(NMR_ERROR_NORESOURCES);
-					if (!pXMLNode->getHasBuild())
-						throw CNMRException(NMR_ERROR_BUILDITEMNOTFOUND);
+					//if (!pXMLNode->getHasResources())
+					//	throw CNMRException(NMR_ERROR_NORESOURCES);
+					//if (!pXMLNode->getHasBuild())
+					//	throw CNMRException(NMR_ERROR_BUILDITEMNOTFOUND);
 				}
 			}
 		}
