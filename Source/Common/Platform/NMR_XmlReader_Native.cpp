@@ -36,6 +36,8 @@ NMR_XMLReader_Native.cpp implements a XML reader class with a native XML parsing
 
 #include "Common/3MF_ProgressMonitor.h"
 
+#include "Model/Classes/NMR_ModelConstants.h" 
+
 #include <algorithm>
 
 namespace NMR {
@@ -189,6 +191,23 @@ namespace NMR {
 	{
 		if (ppszValue == nullptr)
 			throw CNMRException(NMR_ERROR_INVALIDPARAM);
+
+		//添加3mf支持的域名检测功能: PACKAGE_XMLNS_093、PACKAGE_XMLNS_100
+		if (strcmp(m_sDefaultNameSpace.c_str(), XML_3MF_NAMESPACE_CORESPEC100) != 0
+			&& strcmp(m_sDefaultNameSpace.c_str(), XML_3MF_NAMESPACE_CORESPEC093) != 0)
+		{
+			for (auto& nameSpace : m_sNameSpaces)
+			{
+				if (strcmp(nameSpace.second.c_str(), XML_3MF_NAMESPACE_CORESPEC100) == 0
+					|| strcmp(nameSpace.second.c_str(), XML_3MF_NAMESPACE_CORESPEC093) == 0)
+				{
+					std::string temp = m_sDefaultNameSpace;
+					m_sDefaultNameSpace = nameSpace.second;
+					m_cbDefaultNameSpaceLength = (nfUint32)m_sDefaultNameSpace.length();
+					nameSpace.second = temp;
+				}
+			}
+		}
 
 		nfUint32 cbLength = 0;
 		if (*m_pCurrentPrefix == 0) {
