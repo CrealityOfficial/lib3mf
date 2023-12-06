@@ -114,7 +114,7 @@ set(LIB3MF_NAME lib3MF)
 # Shared library
 __add_real_target(${LIB3MF_NAME} lib SOURCE ${SRCS_MAIN_PLATFORM}
 											"./Source/Model/COM/NMR_DLLInterfaces.cpp" ${SRCS_COMMON} ${VERSION_FILES_OUTPUTLOCATION}
-									 LIB zip zlib
+									 LIB zip zlib_static
 									 INC ${CMAKE_CURRENT_SOURCE_DIR}/Include ${CMAKE_CURRENT_BINARY_DIR}/Include
 									 INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/Include ${CMAKE_CURRENT_BINARY_DIR}/Include
 										${CMAKE_CURRENT_SOURCE_DIR}/Source/3mf/
